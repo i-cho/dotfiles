@@ -244,7 +244,27 @@ endif
 "---------------------------------------------------------------------------
 " NeoBundleプラグインのための設定
 
+set nocompatible
+filetype off
 
+if has('vim_starting')
+  set runtimepath+=$HOME/.vim/bundle/neobundle.vim
+  "call neobundle#rc(expand('~/.vim/bundle'))
+endif
+
+call neobundle#begin(expand('~/.vim/bundle'))
+
+" Let NeoBundle manage
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" インストールプラグインリスト
+
+NeoBundleCheck
+
+call neobundle#end()
+
+filetype plugin indent on
+syntax on
 
 "---------------------------------------------------------------------------
 " KaoriYaでバンドルしているプラグインのための設定
