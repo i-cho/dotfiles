@@ -4,7 +4,7 @@ scriptencoding utf-8
 " An example for a Japanese version vimrc file.
 " 日本語版のデフォルト設定ファイル(vimrc) - Vim7用試作
 "
-" Last Change: 15-Oct-2014.
+" Last Change: 16-Oct-2014.
 " Maintainer:  MURAOKA Taro <koron.kaoriya@gmail.com>
 "
 " 解説:
@@ -257,14 +257,15 @@ call neobundle#begin(expand('~/.vim/bundle'))
 " Let NeoBundle manage
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-" インストールプラグインリスト
-
-NeoBundleCheck
+" Add plugin
+NeoBundle 'scrooloose/nerdtree'
 
 call neobundle#end()
 
 filetype plugin indent on
 syntax on
+
+NeoBundleCheck
 
 "---------------------------------------------------------------------------
 " KaoriYaでバンドルしているプラグインのための設定
@@ -283,6 +284,15 @@ if kaoriya#switch#enabled('disable-vimproc')
 endif
 
 "---------------------------------------------------------------------------
+" CygwinとGVimで使用するviminfoをわける
+
+if has('win32') || has('win64')
+  set viminfo+=n$HOME/.vim/.viminfo_win
+else
+  set viminfo+=n$HOME/.vim/.viminfo
+endif
+
+"---------------------------------------------------------------------------
 " マップ定義:
 "
 "バッファ移動用キーマップ
@@ -292,6 +302,28 @@ endif
 map <F2> <ESC>:bp<CR>
 map <F3> <ESC>:bn<CR>
 map <F4> <ESC>:bd<CR>
+
+" Navitagions using keys up/down/left/right
+" Disabline default keys to learn the hjkl
+"nnoremap <up> <nop>
+"nnoremap <down> <nop>
+"nnoremap <left> <nop>
+"nnoremap <right> <nop>
+"nnoremap j gj
+"nnoremap k gk
+
+" Toggle the Tagbar window
+"nmap <F8> <ESC>:TagbarToggle<CR>
+
+" Toggle the NerdTree Window
+nmap <C-n> <ESC>:NERDTreeToggle<CR>
+
+"---------------------------------------------------------------------------
+" Bash Support定義
+
+let g:BASH_AuthorName = 'IlHun CHO'
+let g:BASH_Email = 'cho@eforce.co.jp'
+let g:BASH_Company = 'eForce Co.,Ltd.'
 
 "---------------------------------------------------------------------------
 " オードコマンド設定
