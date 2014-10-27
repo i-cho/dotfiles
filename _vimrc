@@ -4,7 +4,7 @@ scriptencoding utf-8
 " An example for a Japanese version vimrc file.
 " 日本語版のデフォルト設定ファイル(vimrc) - Vim7用試作
 "
-" Last Change: 16-Oct-2014.
+" Last Change: 23-Oct-2014.
 " Maintainer:  MURAOKA Taro <koron.kaoriya@gmail.com>
 "
 " 解説:
@@ -196,6 +196,9 @@ colorscheme torte
 set backupdir=$HOME/.vim/backup
 set directory=$HOME/.vim/backup
 
+" Undoファイルの保存
+"set noundofile
+set undodir=$HOME/.vim/undo
 
 "---------------------------------------------------------------------------
 " ファイル名に大文字小文字の区別がないシステム用の設定:
