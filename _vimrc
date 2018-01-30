@@ -256,7 +256,7 @@ if has('vim_starting')
   "call neobundle#rc(expand('~/.vim/bundle'))
 endif
 
-call neobundle#begin(expand('~/.vim/bundle'))
+call neobundle#begin(expand('$HOME/.vim/bundle'))
 
 " Let NeoBundle manage
 NeoBundleFetch 'Shougo/neobundle.vim'
