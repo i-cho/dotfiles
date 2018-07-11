@@ -4,7 +4,7 @@ scriptencoding utf-8
 " An example for a Japanese version vimrc file.
 " 日本語版のデフォルト設定ファイル(vimrc) - Vim7用試作
 "
-" Last Change: 27-Oct-2014.
+" Last Change: 31-Jan-2018.
 " Maintainer:  MURAOKA Taro <koron.kaoriya@gmail.com>
 "
 " 解説:
@@ -184,7 +184,7 @@ if has("syntax")
     syntax on
 endif
 " カラースキーマ
-colorscheme torte
+"colorscheme molokai
 " 画面を黒地に白にする (次行の先頭の " を削除すれば有効になる)
 "colorscheme evening " (Windows用gvim使用時はgvimrcを編集すること)
 
@@ -197,7 +197,7 @@ set backupdir=$HOME/.vim/backup
 set directory=$HOME/.vim/backup
 
 " Undoファイルの保存
-"set noundofile
+set noundofile
 " undodirを変更するとファイル名がバケルので一旦無効とする
 "set undodir=$HOME/.vim/undo
 
@@ -263,6 +263,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Add plugin
 NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'tomasr/molokai'
 
 call neobundle#end()
 
